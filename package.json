@@ -1,0 +1,29 @@
+{
+  "name": "my-ts",
+  "version": "1.0.0",
+  "description": "fluent API for TypeScript",
+  "main": "src/my.ts",
+  "scripts": {
+    "pretest": "tsc",
+    "test": "jest --runInBand",
+    "update:packages": "npm install --save-dev jest@latest  && npm install --save-dev typescript@next tslint@next",
+    "update:types": "npm install --save-dev @types/jest @types/node",
+    "update:cli": "npm install -g typescript@next jest@latest tslint@next",
+    "update:check": "npm outdated",
+    "update:npm": "npm -v && npm install -g npm@latest && npm -v",
+    "lint": "./node_modules/.bin/tslint 'src/**/*.ts'"
+  },
+  "author": "Henri d'Orgeval",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^19.2.2",
+    "@types/node": "^7.0.14",
+    "jest": "^19.0.2",
+    "tslint": "^5.0.0-dev.0",
+    "typescript": "^2.4.0-dev.20170428"
+  },
+  "engines": {
+    "node": ">=7.0.8",
+    "npm": ">=4.2.0"
+  }
+}
