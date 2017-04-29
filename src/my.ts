@@ -1,34 +1,34 @@
 
-import {myInterface} from './my.interface'
-class My implements myInterface{
-    private _input:any;
-    
+import {Imy} from "./my.interface";
+class My implements Imy {
+    private input: any;
+
     /**
      *
      */
-    constructor(input:any) {
-        this._input = input;
+    constructor(input: any) {
+        this.input = input;
     }
-    
-    isNull():boolean{
-        if (this._input === null){
+
+    public isNull(): boolean {
+        if (this.input === null) {
             return true;
         }
         return false;
     }
 
-    isUndefined():boolean{
-        if (this._input === undefined){
+    public isUndefined(): boolean {
+        if (this.input === undefined) {
             return true;
         }
         return false;
     }
-    
-    isNullOrUndefined():boolean{
-        if (this.isNull()){
+
+    public isNullOrUndefined(): boolean {
+        if (this.isNull()) {
             return true;
         }
-        if (this.isUndefined()){
+        if (this.isUndefined()) {
             return true;
         }
         return false;
@@ -36,11 +36,10 @@ class My implements myInterface{
 
 }
 
-
 /**
  * my fluent API
  * @param input object used by the fluent API
  */
-export const my=function(input:any):myInterface{
+export const my = (input: any): Imy => {
     return new My(input);
-} 
+};

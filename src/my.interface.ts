@@ -1,16 +1,16 @@
-export interface myInterface{
+export interface Imy {
     /**
      * Check if input object is null
      */
-    isNull():boolean;
+    isNull(): boolean;
 
     /**
      * Check if input object is undefined
      */
-    isUndefined():boolean;
+    isUndefined(): boolean;
 
     /**
      * Check if input object is null or undefined
      */
-    isNullOrUndefined():boolean;
+    isNullOrUndefined(): boolean;
 }
