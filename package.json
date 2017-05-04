@@ -1,20 +1,22 @@
 {
   "name": "my-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "fluent API for TypeScript",
-  "main": "src/my.ts",
+  "main": "build/my.js",
+  "typings": "build/my.d.ts",
   "scripts": {
     "pretest": "tsc",
     "test": "jest --runInBand",
     "update:packages": "npm install --save-dev jest@latest  && npm install --save-dev typescript@next tslint@next",
     "update:types": "npm install --save-dev @types/jest @types/node",
-    "update:cli": "npm install -g typescript@next jest@latest tslint@next",
+    "update:cli": "npm install -g typescript@next jest@latest tslint@next rimraf@next",
     "update:check": "npm outdated",
     "update:npm": "npm -v && npm install -g npm@latest && npm -v",
-    "lint": "./node_modules/.bin/tslint 'src/**/*.ts'"
+    "lint": "./node_modules/.bin/tslint 'src/**/*.ts'",
+    "package":"npm run lint && rimraf ./build && rimraf ./package && tsc -p tsconfig.npm-pack.json --listEmittedFiles && jest --config=jestconfig.npm-pack.json && npm pack"
   },
   "author": "Henri d'Orgeval",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/jest": "^19.2.2",
     "@types/node": "^7.0.14",
@@ -25,5 +27,8 @@
   "engines": {
     "node": ">=7.0.8",
     "npm": ">=4.2.0"
+  },
+  "jest": {
+    "roots":["./src/"]
   }
 }
