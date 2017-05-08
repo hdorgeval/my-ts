@@ -117,6 +117,24 @@ test("isEmpty should return true when input object is an empty literal object", 
     expect(result).toBeTruthy();
 });
 
+test("isEmpty should return true when input object is an empty string", () => {
+    // Given
+    const object: string = "";
+    // When
+    const result = my(object).isEmpty();
+    // Then
+    expect(result).toBeTruthy();
+});
+
+test("isEmpty should return false when input object is a non empty string", () => {
+    // Given
+    const object: string = "test";
+    // When
+    const result = my(object).isEmpty();
+    // Then
+    expect(result).toBeFalsy();
+});
+
 test("isEmpty should return false when input object is a literal object with owned properties", () => {
     // Given
     const object: any = {prop1: "prop1", length: 0};
@@ -178,4 +196,22 @@ test("isNullOrUndefinedOrEmpty should return true when input object is an empty 
     const result = my(object).isNullOrUndefinedOrEmpty();
     // Then
     expect(result).toBeTruthy();
+});
+
+test("isNullOrUndefinedOrEmpty should return true when input object is an empty string", () => {
+    // Given
+    const object: string = "";
+    // When
+    const result = my(object).isNullOrUndefinedOrEmpty();
+    // Then
+    expect(result).toBeTruthy();
+});
+
+test("isNullOrUndefinedOrEmpty should return false when input object is a non empty string", () => {
+    // Given
+    const object: string = "test";
+    // When
+    const result = my(object).isNullOrUndefinedOrEmpty();
+    // Then
+    expect(result).toBeFalsy();
 });

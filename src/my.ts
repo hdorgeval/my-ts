@@ -48,6 +48,9 @@ class My implements Imy {
         if (this.isArray() && this.input.length > 0) {
             return false;
         }
+        if (typeof this.input === "string" && this.input.length === 0) {
+            return true;
+        }
         if (this.hasOwnProperties()) {
             return false;
         }
