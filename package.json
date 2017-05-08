@@ -1,6 +1,6 @@
 {
   "name": "my-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "fluent API for TypeScript",
   "main": "build/my.js",
   "typings": "build/my.d.ts",
@@ -13,7 +13,7 @@
     "update:check": "npm outdated",
     "update:npm": "npm -v && npm install -g npm@latest && npm -v",
     "lint": "./node_modules/.bin/tslint 'src/**/*.ts'",
-    "package":"npm run lint && rimraf ./build && rimraf ./package && tsc -p tsconfig.npm-pack.json --listEmittedFiles && jest --config=jestconfig.npm-pack.json && npm pack"
+    "package":"npm run lint && rimraf ./build && rimraf ./package && rm -f my*.tgz && tsc -p tsconfig.npm-pack.json --listEmittedFiles && jest --config=jestconfig.npm-pack.json && npm pack"
   },
   "author": "Henri d'Orgeval",
   "license": "MIT",

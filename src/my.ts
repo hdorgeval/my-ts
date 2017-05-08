@@ -34,6 +34,43 @@ class My implements Imy {
         return false;
     }
 
+    public isArray(): boolean {
+        if (Array.isArray(this.input)) {
+            return true;
+        }
+        return false;
+    }
+
+    public isEmpty(): boolean {
+        if (this.isArray() && this.input.length === 0) {
+            return true;
+        }
+        if (this.isArray() && this.input.length > 0) {
+            return false;
+        }
+        if (this.hasOwnProperties()) {
+            return false;
+        }
+        return true;
+    }
+
+    public hasOwnProperties(): boolean {
+        const ownPropertyNames = Object.getOwnPropertyNames(this.input);
+        if (my(ownPropertyNames).isEmpty()) {
+            return false;
+        }
+        return true;
+    }
+    public isNullOrUndefinedOrEmpty(): boolean {
+        if (this.isNullOrUndefined()) {
+            return true;
+        }
+        if (this.isEmpty()) {
+            return true;
+        }
+        return false;
+    }
+
 }
 
 /**
