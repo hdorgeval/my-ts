@@ -63,42 +63,6 @@ test("isNullOrUndefined should return false when input object is not null and no
     expect(result).toBeFalsy();
 });
 
-test("isArray should return false when input object is an empty literal object", () => {
-    // Given
-    const object: any = {};
-    // When
-    const result = my(object).isArray();
-    // Then
-    expect(result).toBeFalsy();
-});
-
-test("isArray should return false when input object is a literal object with owned properties", () => {
-    // Given
-    const object: any = {prop1: "prop1", length: 0};
-    // When
-    const result = my(object).isArray();
-    // Then
-    expect(result).toBeFalsy();
-});
-
-test("isArray should return true when input object is an empty array", () => {
-    // Given
-    let object: any[] = new Array<any>();
-    // When
-    const result = my(object).isArray();
-    // Then
-    expect(result).toBeTruthy();
-});
-
-test("isArray should return true when input object is an array with at least one value in it", () => {
-    // Given
-    let object: any[] = [0, 1, 2, 3];
-    // When
-    const result = my(object).isArray();
-    // Then
-    expect(result).toBeTruthy();
-});
-
 test("isEmpty should return true when input object is an empty array of string", () => {
     // Given
     const object: string[] = [];
@@ -106,6 +70,15 @@ test("isEmpty should return true when input object is an empty array of string",
     const result = my(object).isEmpty();
     // Then
     expect(result).toBeTruthy();
+});
+
+test("isEmpty should return false when input object is non empty array", () => {
+    // Given
+    const object: any[] = [1, 2, 3];
+    // When
+    const result = my(object).isEmpty();
+    // Then
+    expect(result).toBeFalsy();
 });
 
 test("isEmpty should return true when input object is an empty literal object", () => {
@@ -214,4 +187,13 @@ test("isNullOrUndefinedOrEmpty should return false when input object is a non em
     const result = my(object).isNullOrUndefinedOrEmpty();
     // Then
     expect(result).toBeFalsy();
+});
+
+test("isNullOrUndefinedOrEmpty should return true when input object is undefined", () => {
+    // Given
+    const object: any = undefined;
+    // When
+    const result = my(object).isNullOrUndefinedOrEmpty();
+    // Then
+    expect(result).toBeTruthy();
 });

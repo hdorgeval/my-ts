@@ -1,5 +1,7 @@
 
+import {my as my_array} from "./array/my-array";
 import {Imy} from "./my.interface";
+
 class My implements Imy {
     private input: any;
 
@@ -34,18 +36,11 @@ class My implements Imy {
         return false;
     }
 
-    public isArray(): boolean {
-        if (Array.isArray(this.input)) {
-            return true;
-        }
-        return false;
-    }
-
     public isEmpty(): boolean {
-        if (this.isArray() && this.input.length === 0) {
+        if (this.isEmptyArray()) {
             return true;
         }
-        if (this.isArray() && this.input.length > 0) {
+        if (this.isNonEmptyArray()) {
             return false;
         }
         if (typeof this.input === "string" && this.input.length === 0) {
@@ -72,6 +67,17 @@ class My implements Imy {
             return true;
         }
         return false;
+    }
+    private isEmptyArray(): boolean {
+        return my_array(this.input)
+                .isArray()
+                .isEmpty();
+    }
+
+    private isNonEmptyArray(): boolean {
+        return my_array(this.input)
+                .isArray()
+                .isNotEmpty();
     }
 
 }
