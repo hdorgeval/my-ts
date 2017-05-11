@@ -2,10 +2,8 @@ export interface ImyArray {
     /**
      * Check if input object is an array
      */
-    isArray(): ImyArrayNext;
-}
+    isArray(): boolean;
 
-export interface ImyArrayNext {
     /**
      * Check if input array is empty
      */

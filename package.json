@@ -1,12 +1,12 @@
 {
   "name": "my-ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "fluent API for TypeScript",
   "main": "build/my.js",
   "typings": "build/my.d.ts",
   "scripts": {
     "pretest": "tsc",
-    "test": "jest --runInBand --coverage",
+    "test": "jest --runInBand --coverage --verbose",
     "update:packages": "npm install --save-dev jest@latest  && npm install --save-dev typescript@next tslint@next",
     "update:types": "npm install --save-dev @types/jest @types/node",
     "update:cli": "npm install -g typescript@next jest@latest tslint@next rimraf@next",

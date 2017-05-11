@@ -70,13 +70,11 @@ class My implements Imy {
     }
     private isEmptyArray(): boolean {
         return my_array(this.input)
-                .isArray()
                 .isEmpty();
     }
 
     private isNonEmptyArray(): boolean {
         return my_array(this.input)
-                .isArray()
                 .isNotEmpty();
     }
 

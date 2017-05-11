@@ -1,41 +1,31 @@
-import {ImyArray, ImyArrayNext} from "./my-array.interface";
+import {ImyArray} from "./my-array.interface";
 
 class My implements ImyArray {
     private input: any;
-
-    private shouldDiscardExecution: boolean;
 
     /**
      *
      */
     constructor(input: any) {
         this.input = input;
-        this.shouldDiscardExecution = false;
     }
 
-    public isArray(): ImyArrayNext {
+    public isArray(): boolean {
         if (Array.isArray(this.input)) {
-            return this;
+            return true;
         }
-        this.shouldDiscardExecution = true;
-        return this;
+        return false;
     }
 
     public isEmpty(): boolean {
-        if (this.shouldDiscardExecution) {
-            return false;
-        }
-        if (this.input.length === 0) {
+        if (this.isArray() && this.input.length === 0) {
             return true;
         }
         return false;
     }
 
     public isNotEmpty(): boolean {
-        if (this.shouldDiscardExecution) {
-            return false;
-        }
-        if (this.input.length > 0) {
+        if (this.isArray() && this.input.length > 0) {
             return true;
         }
         return false;
