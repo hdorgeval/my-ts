@@ -2,30 +2,30 @@ export interface ImyCommon {
     /**
      * Check if input object is null
      */
-    isNull(): boolean;
+    isNull: boolean;
 
     /**
      * Check if input object is undefined
      */
-    isUndefined(): boolean;
+    isUndefined: boolean;
 
     /**
      * Check if input object is null or undefined
      */
-    isNullOrUndefined(): boolean;
+    isNullOrUndefined: boolean;
 
     /**
      * Check if input object is empty
      */
-    isEmpty(): boolean;
+    isEmpty: boolean;
 
     /**
      * Check if input object has owned properties
      */
-    hasOwnProperties(): boolean;
+    hasOwnProperties: boolean;
 
     /**
      * Check if input object is null or undefined or empty
      */
-    isNullOrUndefinedOrEmpty(): boolean;
+    isNullOrUndefinedOrEmpty: boolean;
 }

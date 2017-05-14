@@ -10,22 +10,22 @@ class My implements ImyArray {
         this.input = input;
     }
 
-    public isArray(): boolean {
+    public get isArray(): boolean {
         if (Array.isArray(this.input)) {
             return true;
         }
         return false;
     }
 
-    public isEmpty(): boolean {
-        if (this.isArray() && this.input.length === 0) {
+    public get isEmpty(): boolean {
+        if (this.isArray && this.input.length === 0) {
             return true;
         }
         return false;
     }
 
-    public isNotEmpty(): boolean {
-        if (this.isArray() && this.input.length > 0) {
+    public get isNotEmpty(): boolean {
+        if (this.isArray && this.input.length > 0) {
             return true;
         }
         return false;

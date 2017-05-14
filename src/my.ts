@@ -12,70 +12,70 @@ class My implements Imy {
         this.input = input;
     }
 
-    public isNull(): boolean {
+    public get isNull(): boolean {
         if (this.input === null) {
             return true;
         }
         return false;
     }
 
-    public isUndefined(): boolean {
+    public get isUndefined(): boolean {
         if (this.input === undefined) {
             return true;
         }
         return false;
     }
 
-    public isNullOrUndefined(): boolean {
-        if (this.isNull()) {
+    public get isNullOrUndefined(): boolean {
+        if (this.isNull) {
             return true;
         }
-        if (this.isUndefined()) {
+        if (this.isUndefined) {
             return true;
         }
         return false;
     }
 
-    public isEmpty(): boolean {
-        if (this.isEmptyArray()) {
+    public get isEmpty(): boolean {
+        if (this.isEmptyArray) {
             return true;
         }
-        if (this.isNonEmptyArray()) {
+        if (this.isNonEmptyArray) {
             return false;
         }
         if (typeof this.input === "string" && this.input.length === 0) {
             return true;
         }
-        if (this.hasOwnProperties()) {
+        if (this.hasOwnProperties) {
             return false;
         }
         return true;
     }
 
-    public hasOwnProperties(): boolean {
+    public get hasOwnProperties(): boolean {
         const ownPropertyNames = Object.getOwnPropertyNames(this.input);
-        if (my(ownPropertyNames).isEmpty()) {
+        if (my(ownPropertyNames).isEmpty) {
             return false;
         }
         return true;
     }
-    public isNullOrUndefinedOrEmpty(): boolean {
-        if (this.isNullOrUndefined()) {
+    public get isNullOrUndefinedOrEmpty(): boolean {
+        if (this.isNullOrUndefined) {
             return true;
         }
-        if (this.isEmpty()) {
+        if (this.isEmpty) {
             return true;
         }
         return false;
     }
-    private isEmptyArray(): boolean {
+    private get isEmptyArray(): boolean {
         return my_array(this.input)
-                .isEmpty();
+                .isEmpty;
     }
 
-    private isNonEmptyArray(): boolean {
+    private get isNonEmptyArray(): boolean {
         return my_array(this.input)
-                .isNotEmpty();
+                .isNotEmpty;
     }
 
 }
