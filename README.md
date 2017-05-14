@@ -3,7 +3,6 @@ fluent API for TypeScript
 
 ![npm](https://img.shields.io/npm/v/my-ts.svg)
 [![devDependency Status](https://david-dm.org/hdorgeval/my-ts/dev-status.svg)](https://david-dm.org/hdorgeval/my-ts?type=dev)
-
 [![dependency Status](https://david-dm.org/hdorgeval/my-ts/status.svg)](https://david-dm.org/hdorgeval/my-ts)
 
 ## Prerequisites

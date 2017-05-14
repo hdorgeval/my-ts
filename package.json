@@ -1,6 +1,6 @@
 {
   "name": "my-ts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "fluent API for TypeScript",
   "main": "build/my.js",
   "typings": "build/my.d.ts",
