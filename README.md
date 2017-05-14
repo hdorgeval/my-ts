@@ -1,7 +1,7 @@
 # my-ts
 fluent API for TypeScript
 
-[![npm][npm-badge]][npm-badge-url]
+![npm](https://img.shields.io/npm/v/my-ts.svg)
 
 ## Prerequisites
 
@@ -22,5 +22,3 @@ if (my(object).isNullOrUndefinedOrEmpty) {
     //code omitted for brevity
 }
 ```
-
-[npm-badge-url]: https://www.npmjs.com/package/my-ts
