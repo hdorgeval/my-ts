@@ -12,8 +12,8 @@
     "update:cli": "npm install -g typescript@next jest@latest tslint@next rimraf@next",
     "update:check": "npm outdated",
     "update:npm": "npm -v && npm install -g npm@latest && npm -v",
-    "lint": "./node_modules/.bin/tslint 'src/**/*.ts'",
-    "package":"npm run lint && rimraf ./build && rimraf ./package && rm -f my*.tgz && tsc -p tsconfig.npm-pack.json --listEmittedFiles && jest --config=jestconfig.npm-pack.json && npm pack"
+    "lint": "tslint 'src/**/*.ts'",
+    "package": "npm run lint && rimraf ./build && rimraf ./package && rm -f my*.tgz && tsc -p tsconfig.npm-pack.json --listEmittedFiles && jest --config=jestconfig.npm-pack.json && npm pack"
   },
   "author": "Henri d'Orgeval",
   "license": "MIT",
@@ -29,6 +29,22 @@
     "npm": ">=4.2.0"
   },
   "jest": {
-    "roots":["./src/"]
-  }
+    "roots": [
+      "./src/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdorgeval/my-ts.git"
+  },
+  "keywords": [
+    "fluent",
+    "API",
+    "TypeScript",
+    "library"
+  ],
+  "bugs": {
+    "url": "https://github.com/hdorgeval/my-ts/issues"
+  },
+  "homepage": "https://github.com/hdorgeval/my-ts#readme"
 }
