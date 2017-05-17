@@ -34,7 +34,7 @@ test("isArray should return false when input object is undefined", () => {
 });
 test("isArray should return true when input object is an empty array", () => {
     // Given
-    let object: any[] = new Array<any>();
+    const object: any[] = new Array<any>();
     // When
     const result = my(object).isArray;
     // Then
@@ -77,7 +77,7 @@ test("isNotEmpty should return false when input object is a literal object with 
 
 test("isEmpty should return true when input object is an empty array", () => {
     // Given
-    let object: any[] = new Array<any>();
+    const object: any[] = new Array<any>();
     // When
     const result = my(object).isEmpty;
     // Then
@@ -85,7 +85,7 @@ test("isEmpty should return true when input object is an empty array", () => {
 });
 test("isNotEmpty should return false when input object is an empty array", () => {
     // Given
-    let object: any[] = new Array<any>();
+    const object: any[] = new Array<any>();
     // When
     const result = my(object).isNotEmpty;
     // Then
@@ -94,7 +94,7 @@ test("isNotEmpty should return false when input object is an empty array", () =>
 
 test("isEmpty should return false when input object is an array with at least one value in it", () => {
     // Given
-    let object: any[] = [0, 1, 2, 3];
+    const object: any[] = [0, 1, 2, 3];
     // When
     const result = my(object).isEmpty;
     // Then
@@ -102,7 +102,7 @@ test("isEmpty should return false when input object is an array with at least on
 });
 test("isNotEmpty should return true when input object is an array with at least one value in it", () => {
     // Given
-    let object: any[] = [0, 1, 2, 3];
+    const object: any[] = [0, 1, 2, 3];
     // When
     const result = my(object).isNotEmpty;
     // Then
