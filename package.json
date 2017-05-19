@@ -1,6 +1,6 @@
 {
   "name": "my-ts",
-  "version": "1.0.6",
+  "version": "0.0.0-semantically-released",
   "description": "fluent API for TypeScript",
   "main": "build/my.js",
   "typings": "build/my.d.ts",
@@ -9,13 +9,15 @@
     "test": "jest --runInBand --coverage --verbose",
     "preupdate:all": "rimraf ./node_modules",
     "update:all": "npm run update:cli && npm run update:packages && npm run update:types",
-    "update:packages": "npm install --save typescript@latest && npm install --save-dev jest@latest tslint@latest",
+    "update:packages": "npm install --save typescript@latest && npm install --save-dev jest@latest tslint@latest semantic-release@latest",
     "update:types": "npm install --save-dev @types/jest @types/node",
-    "update:cli": "npm install -g typescript@latest jest@latest tslint@latest rimraf@latest",
+    "update:cli": "npm install -g typescript@latest jest@latest tslint@latest rimraf@latest semantic-release-cli@latest",
     "update:check": "npm outdated",
     "update:npm": "npm -v && npm install -g npm@latest && npm -v",
     "lint": "tslint 'src/**/*.ts'",
-    "package": "npm run lint && rimraf ./build && rimraf ./package && rm -f my*.tgz && tsc -p tsconfig.npm-pack.json --listEmittedFiles && jest --config=jestconfig.npm-pack.json && npm pack"
+    "build": "rimraf ./build  && tsc -p tsconfig.npm-pack.json --listEmittedFiles && jest --config=jestconfig.npm-pack.json",
+    "package": "rimraf ./package && rm -f my*.tgz && npm pack",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "author": "Henri d'Orgeval",
   "license": "MIT",
@@ -23,6 +25,7 @@
     "@types/jest": "19.2.3",
     "@types/node": "7.0.18",
     "jest": "20.0.3",
+    "semantic-release": "6.3.6",
     "tslint": "5.2.0"
   },
   "dependencies": {
@@ -39,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hdorgeval/my-ts.git"
+    "url": "https://github.com/hdorgeval/my-ts.git"
   },
   "keywords": [
     "fluent",
