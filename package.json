@@ -5,13 +5,14 @@
   "main": "build/my.js",
   "typings": "build/my.d.ts",
   "scripts": {
+    "commit": "git-cz",
     "pretest": "tsc",
     "test": "jest --runInBand --coverage --verbose",
     "preupdate:all": "rimraf ./node_modules",
     "update:all": "npm run update:cli && npm run update:packages && npm run update:types",
-    "update:packages": "npm install --save typescript@latest && npm install --save-dev jest@latest tslint@latest semantic-release@latest",
+    "update:packages": "npm install --save typescript@latest && npm install --save-dev jest@latest tslint@latest semantic-release@latest commitizen@latest cz-conventional-changelog@latest",
     "update:types": "npm install --save-dev @types/jest @types/node",
-    "update:cli": "npm install -g typescript@latest jest@latest tslint@latest rimraf@latest semantic-release-cli@latest",
+    "update:cli": "npm install -g typescript@latest jest@latest tslint@latest rimraf@latest semantic-release-cli@latest commitizen@latest cz-conventional-changelog@latest",
     "update:check": "npm outdated",
     "update:npm": "npm -v && npm install -g npm@latest && npm -v",
     "lint": "tslint 'src/**/*.ts'",
@@ -24,6 +25,8 @@
   "devDependencies": {
     "@types/jest": "19.2.3",
     "@types/node": "7.0.18",
+    "commitizen": "2.9.6",
+    "cz-conventional-changelog": "2.0.0",
     "jest": "20.0.3",
     "semantic-release": "6.3.6",
     "tslint": "5.2.0"
@@ -53,5 +56,10 @@
   "bugs": {
     "url": "https://github.com/hdorgeval/my-ts/issues"
   },
-  "homepage": "https://github.com/hdorgeval/my-ts#readme"
+  "homepage": "https://github.com/hdorgeval/my-ts#readme",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
