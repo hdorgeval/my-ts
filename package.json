@@ -5,6 +5,7 @@
   "main": "build/my.js",
   "typings": "build/my.d.ts",
   "scripts": {
+    "precommit": "npm run lint && npm test",
     "commit": "git-cz",
     "pretest": "tsc",
     "test": "jest --runInBand --coverage --verbose",
