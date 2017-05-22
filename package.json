@@ -13,7 +13,7 @@
     "update:all": "npm run update:cli && npm run update:packages && npm run update:types",
     "update:packages": "npm install --save typescript@latest && npm install --save-dev jest@latest tslint@latest semantic-release@latest commitizen@latest cz-conventional-changelog@latest",
     "update:types": "npm install --save-dev @types/jest @types/node",
-    "update:cli": "npm install -g typescript@latest jest@latest tslint@latest rimraf@latest semantic-release-cli@latest commitizen@latest cz-conventional-changelog@latest",
+    "update:cli": "npm install -g typescript@latest jest@latest tslint@latest rimraf@latest semantic-release-cli@latest commitizen@latest cz-conventional-changelog@latest codecov@latest",
     "update:check": "npm outdated",
     "update:npm": "npm -v && npm install -g npm@latest && npm -v",
     "lint": "tslint 'src/**/*.ts'",
@@ -43,11 +43,11 @@
     "roots": [
       "./src/"
     ],
-    "collectCoverageFrom" : [
+    "collectCoverageFrom": [
       "src/**/*.{js,jsx}",
       "!src/**/*.interface.js",
       "!**/node_modules/**"
-      ],
+    ],
     "coverageThreshold": {
       "global": {
         "branches": 90,

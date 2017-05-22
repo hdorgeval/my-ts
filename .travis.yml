@@ -16,6 +16,7 @@ script:
   - npm run build
 
 after_success:
+  - codecov
   - npm run semantic-release
 
 branches:
