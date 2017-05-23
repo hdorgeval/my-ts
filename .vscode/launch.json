@@ -11,7 +11,7 @@
             "protocol": "auto",
             "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
             "stopOnEntry": false,
-            "args": ["--runInBand"],
+            "args": ["--runInBand", "--config=jestconfig.debug.json"],
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "tsc",
             "runtimeExecutable": null,
