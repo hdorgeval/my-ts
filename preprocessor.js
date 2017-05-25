@@ -5,9 +5,10 @@ module.exports = {
   process(src, path) {
     if (path.endsWith('.ts') || path.endsWith('.tsx')) {
         const content = src;
-        const result= ts.transpile(content, tsConfig.compilerOptions, path, [], /*moduleName*/ undefined);
-        return result;
+        const transpileOptions = {compilerOptions: tsConfig.compilerOptions};
+        const transpileOutput = ts.transpileModule(content,transpileOptions);
+        return transpileOutput.outputText;
     }
     return src;
-  },
+  }
 };
