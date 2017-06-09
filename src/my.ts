@@ -46,6 +46,12 @@ class My implements Imy {
         if (typeof this.input === "string" && this.input.length === 0) {
             return true;
         }
+        if (typeof this.input === "number") {
+            return false;
+        }
+        if (typeof this.input === "boolean") {
+            return false;
+        }
         if (this.hasOwnProperties) {
             return false;
         }
