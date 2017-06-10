@@ -28,4 +28,9 @@ export interface ImyCommon {
      * Check if input object is null or undefined or empty
      */
     isNullOrUndefinedOrEmpty: boolean;
+
+    /**
+     * Check if input array contains a value
+     */
+    contains<T>(value: T): boolean;
 }

@@ -83,6 +83,12 @@ class My implements Imy {
         return my_array(this.input)
                 .isNotEmpty;
     }
+    public contains<T>(value: T): boolean {
+        if (my_array(this.input).contains(value)) {
+            return true;
+        }
+        return false;
+    }
 
 }
 

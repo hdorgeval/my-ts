@@ -12,4 +12,8 @@ export interface ImyArray {
      * Check if input array is not empty
      */
     isNotEmpty: boolean;
+    /**
+     * Check if input array contains a value
+     */
+    contains<T>(value: T): boolean;
 }

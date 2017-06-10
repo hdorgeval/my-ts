@@ -1,5 +1,5 @@
 import {my} from "./my";
-
+// tslint:disable:max-line-length
 test("isNull should return true when input object is null", () => {
     // Given
     const object: any = null;
@@ -239,6 +239,38 @@ test("isNullOrUndefinedOrEmpty should return true when input object is undefined
     const object: any = undefined;
     // When
     const result = my(object).isNullOrUndefinedOrEmpty;
+    // Then
+    expect(result).toBeTruthy();
+});
+
+test("contains should return false when input object is undefined", () => {
+    // Given
+    const object: any = undefined;
+    const value = {};
+    // When
+    const result = my(object).contains(value);
+    // Then
+    expect(result).toBeFalsy();
+});
+
+test("contains should return false when input object is null", () => {
+    // Given
+    const object: any = null;
+    const value = {};
+    // When
+    const result = my(object).contains(value);
+    // Then
+    expect(result).toBeFalsy();
+});
+
+test("contains should return true when input object is an array of literal objects that contains the specified literal object", () => {
+    // Given
+    const obj1 = {};
+    const obj2 = {};
+    const obj3 = {};
+    const object: any[] = [obj1, obj2 , obj3];
+    // When
+    const result = my(object).contains(obj2);
     // Then
     expect(result).toBeTruthy();
 });
