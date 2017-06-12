@@ -44,6 +44,25 @@ class My implements ImyArray {
         }
         return false;
     }
+    public firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T {
+        if (this.isNotArray) {
+            return undefined;
+        }
+        if (this.isEmpty) {
+            return undefined;
+        }
+        for (let i = 0; i < this.input.length; i++) {
+            const value = this.input[i];
+            try {
+                if (predicate(value, i)) {
+                    return value;
+                }
+            } catch (error) {
+                return undefined;
+            }
+        }
+        return undefined;
+    }
 }
 
 /**

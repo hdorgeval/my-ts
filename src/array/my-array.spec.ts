@@ -194,3 +194,144 @@ test("contains should return true when input object is an array of literal objec
     // Then
     expect(result).toBeTruthy();
 });
+
+test(`Given input array is a null string[]
+      And predicate searches string "test"
+      When firstOrDefault is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: string[] = null;
+    const elementToFind = "test";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});
+
+test(`Given input array is an undefined string[]
+      And predicate searches string "test"
+      When firstOrDefault is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: string[] = undefined;
+    const elementToFind = "test";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});
+
+test(`Given input array is an empty string[]
+      And predicate searches string "test"
+      When firstOrDefault is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: string[] = [];
+    const elementToFind = "test";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});
+
+test(`Given input array is string[] with values ["test1","test2"]
+      And predicate searches string "test1"
+      When firstOrDefault is called
+      Then the result should be "test1"`
+    , () => {
+    // Given
+    const object: string[] = ["test1", "test2"];
+    const elementToFind = "test1";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBe(elementToFind);
+});
+
+test(`Given input array is string[] with values ["test1","test2"]
+      And predicate searches string "test3"
+      When firstOrDefault is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: string[] = ["test1", "test2"];
+    const elementToFind = "test3";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});
+
+test(`Given input array is string[] with values ["test1","test2"]
+      And predicate searches string "test1"
+      But predicate throws an error
+      When firstOrDefault is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: string[] = ["test1", "test2"];
+    const elementToFind = "test1";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            throw new Error("predicate failure");
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});
+
+test(`Given input array is a literal object {test1,test2}
+      And predicate searches string "test1"
+      When firstOrDefault is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object = {test1: "test1", test2: "test2"};
+    const elementToFind = "test1";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});

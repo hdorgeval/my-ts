@@ -274,3 +274,23 @@ test("contains should return true when input object is an array of literal objec
     // Then
     expect(result).toBeTruthy();
 });
+
+test(`Given input object is an empty string[]
+      And predicate searches string "test"
+      When firstOrDefault is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: string[] = [];
+    const elementToFind = "test";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).firstOrDefault(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});

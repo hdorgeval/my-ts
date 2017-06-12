@@ -11,21 +11,18 @@ class My implements Imy {
     constructor(input: any) {
         this.input = input;
     }
-
     public get isNull(): boolean {
         if (this.input === null) {
             return true;
         }
         return false;
     }
-
     public get isUndefined(): boolean {
         if (this.input === undefined) {
             return true;
         }
         return false;
     }
-
     public get isNullOrUndefined(): boolean {
         if (this.isNull) {
             return true;
@@ -35,7 +32,6 @@ class My implements Imy {
         }
         return false;
     }
-
     public get isEmpty(): boolean {
         if (this.isEmptyArray) {
             return true;
@@ -57,7 +53,6 @@ class My implements Imy {
         }
         return true;
     }
-
     public get hasOwnProperties(): boolean {
         const ownPropertyNames = Object.getOwnPropertyNames(this.input);
         if (my(ownPropertyNames).isEmpty) {
@@ -78,7 +73,6 @@ class My implements Imy {
         return my_array(this.input)
                 .isEmpty;
     }
-
     private get isNonEmptyArray(): boolean {
         return my_array(this.input)
                 .isNotEmpty;
@@ -88,6 +82,9 @@ class My implements Imy {
             return true;
         }
         return false;
+    }
+    public firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T {
+        return my_array(this.input).firstOrDefault(predicate);
     }
 
 }
