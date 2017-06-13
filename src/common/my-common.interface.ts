@@ -40,4 +40,11 @@ export interface ImyCommon {
      * @returns {T | undefined}
      */
     firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T | undefined;
+
+    /**
+     * Select, in a new array, all items of the input array that satisfies the predicate.
+     * @param {function} predicate - Predicate used to select the elements in input array
+     * @returns {T[]} - returns the selected items or an empty array if no item is selected
+     */
+    where<T>(predicate: (element: T, index: number) => boolean): T[];
 }

@@ -63,6 +63,27 @@ class My implements ImyArray {
         }
         return undefined;
     }
+
+    public where<T>(predicate: (element: T, index: number) => boolean): T[] {
+        if (this.isNotArray) {
+            return [];
+        }
+        if (this.isEmpty) {
+            return [];
+        }
+        const foundItems: T[] = [];
+        for (let i = 0; i < this.input.length; i++) {
+            const item = this.input[i];
+            try {
+                if (predicate(item, i)) {
+                    foundItems.push(item);
+                }
+            } catch (error) {
+                continue;
+            }
+        }
+        return foundItems;
+    }
 }
 
 /**

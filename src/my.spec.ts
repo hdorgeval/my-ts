@@ -294,3 +294,23 @@ test(`Given input object is an empty string[]
     // Then
     expect(result).toBeUndefined();
 });
+
+test(`Given input object is an empty string[]
+      And predicate searches string "test"
+      When 'where' is called
+      Then the result should be an empty []`
+    , () => {
+    // Given
+    const object: string[] = [];
+    const elementToFind = "test";
+    const predicate = (element: string, index: number): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).where(predicate);
+    // Then
+    expect(result).toEqual([]);
+});

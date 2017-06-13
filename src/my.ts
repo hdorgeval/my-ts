@@ -86,6 +86,9 @@ class My implements Imy {
     public firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T {
         return my_array(this.input).firstOrDefault(predicate);
     }
+    public where<T>(predicate: (element: T, index: number) => boolean): T[] {
+        return my_array(this.input).where(predicate);
+    }
 
 }
 

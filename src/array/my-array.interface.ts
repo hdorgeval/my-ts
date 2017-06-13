@@ -12,14 +12,23 @@ export interface ImyArray {
      * Check if input array is not empty
      */
     isNotEmpty: boolean;
+
     /**
      * Check if input array contains a value
      */
     contains<T>(value: T): boolean;
+
     /**
      * Get in input array the first element that matches the predicate
-     * @param {function} - Predicate used to find the element
+     * @param {function} predicate - Predicate used to find the element
      * @returns {T | undefined}
      */
     firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T | undefined;
+
+    /**
+     * Select, in a new array, all items of the input array that satisfies the predicate.
+     * @param {function} predicate - Predicate used to select the elements in input array
+     * @returns {T[]} - returns the selected items or an empty array if no item is selected
+     */
+    where<T>(predicate: (element: T, index: number) => boolean): T[];
 }
