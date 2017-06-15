@@ -1,3 +1,4 @@
+import { IValidationResult } from "./common/my-common.interface";
 import {my} from "./my";
 // tslint:disable:max-line-length
 test("isNull should return true when input object is null", () => {
@@ -313,4 +314,47 @@ test(`Given input object is an empty string[]
     const result = my(object).where(predicate);
     // Then
     expect(result).toEqual([]);
+});
+
+test(`Given input object is a null object
+      And a validator that checks input object should not be null
+      When 'validateWith' is called with this validator
+      Then the result should be an IValidationResult with isValid=false`
+    , () => {
+    // Given
+    const object: any = null;
+    const validator = (element: any): IValidationResult => {
+        if (my(object).isNullOrUndefinedOrEmpty) {
+            return {isValid: false};
+        }
+        return {isValid: true};
+    };
+    // When
+    const {isValid} = my(object).validateWith(validator);
+    // Then
+    expect(isValid).toBe(false);
+});
+
+test(`Given input object is a null object
+      And a validator that checks input object should not be null
+      When 'validateWith' is called with this validator
+      But validator throws an error
+      Then the result should be an IValidationResult with isValid=false
+      And the reason message should be the error message of the throwned exception
+      `
+    , () => {
+    // Given
+    const object: any = null;
+    const errorMessage = "bad";
+    const validator = (element: any): IValidationResult => {
+        if (my(object).isNullOrUndefinedOrEmpty) {
+            throw new Error(errorMessage);
+        }
+        return {isValid: true};
+    };
+    // When
+    const {isValid, validationErrors} = my(object).validateWith(validator);
+    // Then
+    expect(isValid).toBe(false);
+    expect(validationErrors[0].reason.indexOf(errorMessage)).toBeGreaterThan(1);
 });

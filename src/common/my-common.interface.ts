@@ -48,3 +48,21 @@ export interface ImyCommon {
      */
     where<T>(predicate: (element: T, index: number) => boolean): T[];
 }
+
+export interface IValidatable {
+    /**
+     * Validate input object with specified validator.
+     * @param {function} validator - function that takes input object and returns an IValidationResult object
+     * @returns {IValidationResult} - returns the IValidationResult object returned by the validator
+     */
+    validateWith<T>(validator: (element: T) => IValidationResult): IValidationResult;
+}
+
+export interface IValidationResult {
+    isValid: boolean;
+    validationErrors?: IValidationError[];
+}
+
+export interface IValidationError {
+    reason: string;
+}

@@ -1,5 +1,6 @@
 
 import {my as my_array} from "./array/my-array";
+import { IValidationResult } from "./common/my-common.interface";
 import {Imy} from "./my.interface";
 
 class My implements Imy {
@@ -88,6 +89,17 @@ class My implements Imy {
     }
     public where<T>(predicate: (element: T, index: number) => boolean): T[] {
         return my_array(this.input).where(predicate);
+    }
+    public validateWith<T>(validator: (element: T) => IValidationResult): IValidationResult {
+        try {
+            return validator(this.input);
+        } catch (error) {
+            const errorMessage = `${error}`;
+            return {
+                isValid: false,
+                validationErrors: [{reason: errorMessage}],
+            };
+        }
     }
 
 }
