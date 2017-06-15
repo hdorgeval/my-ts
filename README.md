@@ -29,11 +29,17 @@ const object: any = ...
 if (my(object).isNullOrUndefinedOrEmpty) {
     //code omitted for brevity
 }
+
+const validator = (element: any): IValidationResult => { ... }
+const {isValid, validationErrors} = my(object).validateWith(validator);
+if (isValid ) {
+    //code omitted for brevity
+}
 ```
 
 ## API
 ```typescript
-/**
+    /**
      * Check if input object is null
      */
     isNull: boolean;
@@ -81,4 +87,12 @@ if (my(object).isNullOrUndefinedOrEmpty) {
      * @returns {T[]} - returns the selected items or an empty array if no item is selected
      */
     where<T>(predicate: (element: T, index: number) => boolean): T[];
+
+    /**
+     * Validate input object with specified validator.
+     * @param {function} validator - function that takes input object and returns an IValidationResult object
+     * @returns {IValidationResult} - returns the IValidationResult object returned by the validator
+     */
+    validateWith<T>(validator: (element: T) => IValidationResult): IValidationResult;
+
 ```
