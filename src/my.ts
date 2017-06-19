@@ -101,6 +101,13 @@ class My implements Imy {
             };
         }
     }
+    public is<T>(predicate: (element: T) => boolean): boolean | undefined {
+        try {
+            return predicate(this.input);
+        } catch (error) {
+            return undefined;
+        }
+    }
 
 }
 

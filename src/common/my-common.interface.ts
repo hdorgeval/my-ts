@@ -36,7 +36,7 @@ export interface ImyCommon {
 
     /**
      * Get in input array the first element that matches the predicate
-     * @param {function} - Predicate used to find the element
+     * @param {function} predicate - Predicate used to find the element
      * @returns {T | undefined}
      */
     firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T | undefined;
@@ -47,6 +47,13 @@ export interface ImyCommon {
      * @returns {T[]} - returns the selected items or an empty array if no item is selected
      */
     where<T>(predicate: (element: T, index: number) => boolean): T[];
+
+    /**
+     * Check if input object matches the predicate
+     * @param {function} predicate - Predicate used to verify that input object satisfies a specific condition
+     * @returns {boolean | undefined}
+     */
+    is<T>(predicate: (element: T) => boolean): boolean | undefined;
 }
 
 export interface IValidatable {

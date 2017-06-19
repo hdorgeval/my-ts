@@ -358,3 +358,43 @@ test(`Given input object is a null object
     expect(isValid).toBe(false);
     expect(validationErrors[0].reason.indexOf(errorMessage)).toBeGreaterThan(1);
 });
+
+test(`Given input object is a null object
+      And a predicate that checks input object is not null
+      When 'is' is called with this predicate
+      Then the result should be false`
+    , () => {
+    // Given
+    const object: any = null;
+    const notNull = (element: any): boolean => {
+        if (element == null) {
+            return false;
+        }
+        return true;
+    };
+    // When
+    const result = my(object).is(notNull);
+    // Then
+    expect(result).toBe(false);
+});
+
+test(`Given input object is a null object
+      And a predicate that checks input object is not null
+      When 'is' is called with this predicate
+      But predicate throws an error
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: any = null;
+    const errorMessage = "bad";
+    const notNull = (element: any): boolean => {
+        if (element == null) {
+            throw new Error(errorMessage);
+        }
+        return true;
+    };
+    // When
+    const result = my(object).is(notNull);
+    // Then
+    expect(result).toBeUndefined();
+});

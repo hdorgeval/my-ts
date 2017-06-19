@@ -35,6 +35,12 @@ const {isValid, validationErrors} = my(object).validateWith(validator);
 if (isValid ) {
     //code omitted for brevity
 }
+
+const notNull = (element: any): boolean => { ... }
+if (my(object).is(notNull)) {
+    //code omitted for brevity
+}
+ 
 ```
 
 ## API
@@ -94,5 +100,12 @@ if (isValid ) {
      * @returns {IValidationResult} - returns the IValidationResult object returned by the validator
      */
     validateWith<T>(validator: (element: T) => IValidationResult): IValidationResult;
+
+    /**
+     * Check if input object matches the predicate
+     * @param {function} predicate - Predicate used to verify that input object satisfies a specific condition
+     * @returns {boolean | undefined}
+     */
+    is<T>(predicate: (element: T) => boolean): boolean | undefined;
 
 ```
