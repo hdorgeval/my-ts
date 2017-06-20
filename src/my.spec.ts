@@ -398,3 +398,43 @@ test(`Given input object is a null object
     // Then
     expect(result).toBeUndefined();
 });
+
+test(`Given input object is a null object
+      And a predicate that checks input object is nullOrUndefinedOrEmpty
+      When 'isNot' is called with this predicate
+      Then the result should be false`
+    , () => {
+    // Given
+    const object: any = null;
+    const nullOrUndefinedOrEmpty = (element: any): boolean => {
+        if (my(element).isNullOrUndefinedOrEmpty) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).isNot(nullOrUndefinedOrEmpty);
+    // Then
+    expect(result).toBe(false);
+});
+
+test(`Given input object is a null object
+      And a predicate that checks input object is nullOrUndefinedOrEmpty
+      When 'isNot' is called with this predicate
+      But predicate throws an error
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: any = null;
+    const errorMessage = "bad";
+    const nullOrUndefinedOrEmpty = (element: any): boolean => {
+        if (my(element).isNullOrUndefinedOrEmpty) {
+            throw new Error(errorMessage);
+        }
+        return false;
+    };
+    // When
+    const result = my(object).isNot(nullOrUndefinedOrEmpty);
+    // Then
+    expect(result).toBeUndefined();
+});

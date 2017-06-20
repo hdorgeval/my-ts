@@ -54,6 +54,13 @@ export interface ImyCommon {
      * @returns {boolean | undefined}
      */
     is<T>(predicate: (element: T) => boolean): boolean | undefined;
+
+    /**
+     * Check if input object does not match the predicate
+     * @param {function} predicate - Predicate used to verify that input object does not satisfy a specific condition
+     * @returns {boolean | undefined}
+     */
+    isNot<T>(predicate: (element: T) => boolean): boolean | undefined;
 }
 
 export interface IValidatable {

@@ -108,6 +108,13 @@ class My implements Imy {
             return undefined;
         }
     }
+    public isNot<T>(predicate: (element: T) => boolean): boolean {
+        try {
+            return predicate(this.input) === false;
+        } catch (error) {
+            return undefined;
+        }
+    }
 
 }
 
