@@ -7,7 +7,7 @@
   "scripts": {
     "precommit": "npm run lint && npm test",
     "commit": "git-cz",
-    "pretest": "tsc --listEmittedFiles" ,
+    "pretest": "tsc --listEmittedFiles",
     "test": "jest --coverage --runInBand --verbose --config=jestconfig.test.json",
     "preupdate:all": "rimraf ./node_modules",
     "update:all": "npm run update:cli && npm run update:packages && npm run update:types",
@@ -19,7 +19,8 @@
     "lint": "tslint 'src/**/*.ts'",
     "build": "rimraf ./build  && tsc -p tsconfig.pack.json --listEmittedFiles && jest --config=jestconfig.pack.json",
     "package": "rimraf ./package && rm -f my*.tgz && npm pack",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commitizen:init": "commitizen init cz-conventional-changelog --save-dev --save-exact"
   },
   "author": "Henri d'Orgeval",
   "license": "MIT",
@@ -28,12 +29,12 @@
     "@types/node": "7.0.18",
     "commitizen": "2.9.6",
     "cz-conventional-changelog": "2.0.0",
-    "jest": "20.0.3",
+    "jest": "20.0.4",
     "semantic-release": "6.3.6",
-    "tslint": "5.2.0"
+    "tslint": "5.4.3"
   },
   "dependencies": {
-    "typescript": "2.3.2"
+    "typescript": "2.4.1"
   },
   "engines": {
     "node": ">=7.0.8",

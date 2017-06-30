@@ -6,7 +6,7 @@
       "^.+\\.(ts|tsx)$": "<rootDir>/preprocessor.js"
     },
     "testMatch": ["**/*.spec.(ts|tsx)"],
-    "moduleFileExtensions": ["ts","tsx","js","jsx"],
+    "moduleFileExtensions": ["ts","tsx","js"],
     "moduleDirectories": ["node_modules", "src"],
     "mapCoverage": true,
     "collectCoverageFrom": [
