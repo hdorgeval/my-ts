@@ -4,6 +4,9 @@
     "module": "commonjs",                    
     "lib": ["es6","dom"],                            
     "sourceMap": true,                                              
-    "moduleResolution": "node"            
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true            
     }
 }

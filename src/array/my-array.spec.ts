@@ -174,7 +174,7 @@ test("contains should return true when input object is an array of literal objec
 test("contains should return true when input object is an array of literal objects that contains the specified undefined object", () => {
     // Given
     const obj1 = {};
-    const obj2 = undefined;
+    const obj2: any = undefined;
     const obj3 = {};
     const object: any[] = [obj1, obj2 , obj3];
     // When
@@ -186,7 +186,7 @@ test("contains should return true when input object is an array of literal objec
 test("contains should return true when input object is an array of literal objects that contains the specified null object", () => {
     // Given
     const obj1 = {};
-    const obj2 = null;
+    const obj2: any = null;
     const obj3 = {};
     const object: any[] = [obj1, obj2 , obj3];
     // When
