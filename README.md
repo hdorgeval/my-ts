@@ -24,7 +24,7 @@ This library have dependencies that require Node 7.0.8 or higher, together with 
 npm install my-ts --save-dev
 ```
 
-## Usage
+## Examples
 
 ```typescript
 const object: any = ...
@@ -40,6 +40,12 @@ if (isValid ) {
 
 const notNull = (element: any): boolean => { ... }
 if (my(object).is(notNull)) {
+    //code omitted for brevity
+}
+
+const elements: any[] = ...
+const elementWithSpecificPattern = (element: any): boolean => { ... }
+if (my(elements).hasAtLeastOne(elementWithSpecificPattern)) {
     //code omitted for brevity
 }
  
@@ -116,5 +122,13 @@ if (my(object).is(notNull)) {
      * @returns {boolean | undefined}
      */
     isNot<T>(predicate: (element: T) => boolean): boolean | undefined;
+
+    /**
+     * Check if input array contains at least one element that satisfies the predicate
+     * @param {function} predicate - Predicate used to find an element
+     * @returns {boolean | undefined} - returns true if one element has been found.
+     *                                  returns undefined if the predicate throws an exception
+     */
+    hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined;
 
 ```

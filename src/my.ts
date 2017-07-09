@@ -115,6 +115,9 @@ class My implements Imy {
             return undefined;
         }
     }
+    public hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined {
+        return my_array(this.input).hasAtLeastOne(predicate);
+    }
 
 }
 

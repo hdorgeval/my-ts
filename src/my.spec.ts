@@ -438,3 +438,23 @@ test(`Given input object is a null object
     // Then
     expect(result).toBeUndefined();
 });
+
+test(`Given input object is an empty string[]
+      And predicate searches string "test"
+      When 'hasAtLeastOne' is called
+      Then the result should be false`
+    , () => {
+    // Given
+    const object: string[] = [];
+    const elementToFind = "test";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBe(false);
+});

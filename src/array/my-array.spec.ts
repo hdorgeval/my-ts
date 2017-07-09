@@ -476,3 +476,144 @@ test(`Given input array is a literal object {test1,test2}
     // Then
     expect(result).toEqual([]);
 });
+
+test(`Given input array is a null string[]
+      And predicate searches string "test"
+      When 'hasAtLeastOne' is called
+      Then the result should be false`
+    , () => {
+    // Given
+    const object: string[] = null;
+    const elementToFind = "test";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBe(false);
+});
+
+test(`Given input array is an undefined string[]
+      And predicate searches string "test"
+      When 'hasAtLeastOne' is called
+      Then the result should be false`
+    , () => {
+    // Given
+    const object: string[] = undefined;
+    const elementToFind = "test";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBe(false);
+});
+
+test(`Given input array is an empty string[]
+      And predicate searches string "test"
+      When 'hasAtLeastOne' is called
+      Then the result should be false`
+    , () => {
+    // Given
+    const object: string[] = [];
+    const elementToFind = "test";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBe(false);
+});
+
+test(`Given input array is string[] with values ["test1","test2"]
+      And predicate searches string "test1"
+      When 'hasAtLeastOne' is called
+      Then the result should be true`
+    , () => {
+    // Given
+    const object: string[] = ["test1", "test2"];
+    const elementToFind = "test1";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBe(true);
+});
+
+test(`Given input array is string[] with values ["test1","test2"]
+      And predicate searches string "test3"
+      When 'hasAtLeastOne' is called
+      Then the result should be false`
+    , () => {
+    // Given
+    const object: string[] = ["test1", "test2"];
+    const elementToFind = "test3";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBe(false);
+});
+
+test(`Given input array is string[] with values ["test1","test2"]
+      And predicate searches string "test1"
+      But predicate throws an error
+      When 'hasAtLeastOne' is called
+      Then the result should be undefined`
+    , () => {
+    // Given
+    const object: string[] = ["test1", "test2"];
+    const elementToFind = "test1";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            throw new Error("predicate failure");
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBeUndefined();
+});
+
+test(`Given input array is a literal object {test1,test2}
+      And predicate searches string "test1"
+      When 'hasAtLeastOne' is called
+      Then the result should be false`
+    , () => {
+    // Given
+    const object = {test1: "test1", test2: "test2"};
+    const elementToFind = "test1";
+    const predicate = (element: string): boolean => {
+        if (element === elementToFind) {
+            return true;
+        }
+        return false;
+    };
+    // When
+    const result = my(object).hasAtLeastOne(predicate);
+    // Then
+    expect(result).toBe(false);
+});

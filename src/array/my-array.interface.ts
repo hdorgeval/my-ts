@@ -31,4 +31,12 @@ export interface ImyArray {
      * @returns {T[]} - returns the selected items or an empty array if no item is selected
      */
     where<T>(predicate: (element: T, index: number) => boolean): T[];
+
+    /**
+     * Check if input array contains at least one element that satisfies the predicate
+     * @param {function} predicate - Predicate used to find an element
+     * @returns {boolean | undefined} - returns true if one element has been found.
+     *                                  returns undefined if the predicate throws an exception
+     */
+    hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined;
 }

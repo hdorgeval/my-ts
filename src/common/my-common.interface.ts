@@ -61,6 +61,14 @@ export interface ImyCommon {
      * @returns {boolean | undefined}
      */
     isNot<T>(predicate: (element: T) => boolean): boolean | undefined;
+
+    /**
+     * Check if input array contains at least one element that satisfies the predicate
+     * @param {function} predicate - Predicate used to find an element
+     * @returns {boolean | undefined} - returns true if one element has been found.
+     *                                  returns undefined if the predicate throws an exception
+     */
+    hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined;
 }
 
 export interface IValidatable {

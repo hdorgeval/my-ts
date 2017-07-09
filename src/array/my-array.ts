@@ -84,6 +84,25 @@ class My implements ImyArray {
         }
         return foundItems;
     }
+
+    public hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined {
+        if (this.isNotArray) {
+            return false;
+        }
+        if (this.isEmpty) {
+            return false;
+        }
+        for (const element of this.input) {
+            try {
+                if (predicate(element)) {
+                    return true;
+                }
+            } catch (error) {
+                return undefined;
+            }
+        }
+        return false;
+    }
 }
 
 /**
