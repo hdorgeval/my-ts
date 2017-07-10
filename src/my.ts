@@ -84,7 +84,7 @@ class My implements Imy {
         }
         return false;
     }
-    public firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T {
+    public firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T | undefined {
         return my_array(this.input).firstOrDefault(predicate);
     }
     public where<T>(predicate: (element: T, index: number) => boolean): T[] {
@@ -108,7 +108,7 @@ class My implements Imy {
             return undefined;
         }
     }
-    public isNot<T>(predicate: (element: T) => boolean): boolean {
+    public isNot<T>(predicate: (element: T) => boolean): boolean | undefined {
         try {
             return predicate(this.input) === false;
         } catch (error) {

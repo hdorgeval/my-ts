@@ -201,7 +201,7 @@ test(`Given input array is a null string[]
       Then the result should be undefined`
     , () => {
     // Given
-    const object: string[] = null;
+    const object: string[] | null = null;
     const elementToFind = "test";
     const predicate = (element: string, index: number): boolean => {
         if (element === elementToFind) {
@@ -221,7 +221,7 @@ test(`Given input array is an undefined string[]
       Then the result should be undefined`
     , () => {
     // Given
-    const object: string[] = undefined;
+    const object: string[] | undefined = undefined;
     const elementToFind = "test";
     const predicate = (element: string, index: number): boolean => {
         if (element === elementToFind) {
@@ -342,7 +342,7 @@ test(`Given input array is a null string[]
       Then the result should be an empty array`
     , () => {
     // Given
-    const object: string[] = null;
+    const object: string[] | null = null;
     const elementToFind = "test";
     const predicate = (element: string, index: number): boolean => {
         if (element === elementToFind) {
@@ -362,7 +362,7 @@ test(`Given input array is an undefined string[]
       Then the result should be an empty array`
     , () => {
     // Given
-    const object: string[] = undefined;
+    const object: string[] | undefined = undefined;
     const elementToFind = "test";
     const predicate = (element: string, index: number): boolean => {
         if (element === elementToFind) {
@@ -483,7 +483,7 @@ test(`Given input array is a null string[]
       Then the result should be false`
     , () => {
     // Given
-    const object: string[] = null;
+    const object: string[] | null = null;
     const elementToFind = "test";
     const predicate = (element: string): boolean => {
         if (element === elementToFind) {
@@ -503,7 +503,7 @@ test(`Given input array is an undefined string[]
       Then the result should be false`
     , () => {
     // Given
-    const object: string[] = undefined;
+    const object: string[] | undefined = undefined;
     const elementToFind = "test";
     const predicate = (element: string): boolean => {
         if (element === elementToFind) {

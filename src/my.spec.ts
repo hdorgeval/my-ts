@@ -356,6 +356,10 @@ test(`Given input object is a null object
     const {isValid, validationErrors} = my(object).validateWith(validator);
     // Then
     expect(isValid).toBe(false);
+    expect(validationErrors).toBeDefined();
+    if (validationErrors === undefined) {
+        return;
+    }
     expect(validationErrors[0].reason.indexOf(errorMessage)).toBeGreaterThan(1);
 });
 

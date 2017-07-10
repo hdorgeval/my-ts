@@ -44,7 +44,7 @@ class My implements ImyArray {
         }
         return false;
     }
-    public firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T {
+    public firstOrDefault<T>(predicate: (element: T, index: number) => boolean): T | undefined {
         if (this.isNotArray) {
             return undefined;
         }
