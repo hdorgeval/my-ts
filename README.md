@@ -9,6 +9,10 @@ fluent API for TypeScript
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 [![codecov](https://codecov.io/gh/hdorgeval/my-ts/branch/master/graph/badge.svg)](https://codecov.io/gh/hdorgeval/my-ts)
 [![Known Vulnerabilities](https://snyk.io/test/github/hdorgeval/my-ts/badge.svg)](https://snyk.io/test/github/hdorgeval/my-ts)
+[![Code Climate](https://codeclimate.com/github/hdorgeval/my-ts/badges/gpa.svg)](https://codeclimate.com/github/hdorgeval/my-ts)
+[![Issue Count](https://codeclimate.com/github/hdorgeval/my-ts/badges/issue_count.svg)](https://codeclimate.com/github/hdorgeval/my-ts)
+
+
 
 
 [![npm badge](https://nodei.co/npm/my-ts.png)](https://npmjs.org/package/my-ts)
