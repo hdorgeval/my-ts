@@ -1,6 +1,6 @@
 
 import {my as my_array} from "./array/my-array";
-import { IValidationResult } from "./common/my-common.interface";
+import { IActionResult, IValidationResult } from "./common/my-common.interface";
 import {Imy} from "./my.interface";
 
 class My implements Imy {
@@ -117,6 +117,23 @@ class My implements Imy {
     }
     public hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined {
         return my_array(this.input).hasAtLeastOne(predicate);
+    }
+    public tryTo<T, U>(action: (element: T) => U): IActionResult<U> {
+        try {
+            const actionResult = action(this.input);
+            return {
+                hasFailed: false,
+                hasSucceeded: true,
+                result: actionResult,
+            };
+        } catch (actionError) {
+            return {
+                error: actionError,
+                hasFailed: true,
+                hasSucceeded: false,
+                result: undefined,
+            };
+        }
     }
 
 }

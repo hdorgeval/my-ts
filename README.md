@@ -52,7 +52,14 @@ const elementWithSpecificPattern = (element: any): boolean => { ... }
 if (my(elements).hasAtLeastOne(elementWithSpecificPattern)) {
     //code omitted for brevity
 }
- 
+
+const object: any = ...
+const process = (element: any): any => { ... }
+const {hasFailed, hasSucceeded, result, error} = my(object).tryTo(process);       
+if (hasSucceeded) {
+    //code omitted for brevity
+}
+
 ```
 
 ## API
@@ -134,5 +141,12 @@ if (my(elements).hasAtLeastOne(elementWithSpecificPattern)) {
      *                                  returns undefined if the predicate throws an exception
      */
     hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined;
+
+    /**
+     * Try to execute an action on input element
+     * @param {function} action - Action used to process the element
+     * @returns {IActionResult<U>} - returns an IActionResult object that wraps the result returned by the action.
+     */
+    tryTo<T, U>(action: (element: T) => U): IActionResult<U>;
 
 ```
