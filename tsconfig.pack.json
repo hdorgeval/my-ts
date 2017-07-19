@@ -15,7 +15,8 @@
 	},
 	"files": [
 		"src/my.ts",
-        "src/my.spec.ts"
+		"src/my.spec.ts",
+		"src/my.tryTo.spec.ts"
 	],
 	"exclude": [
 		"node_modules"
