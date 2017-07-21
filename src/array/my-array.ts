@@ -103,6 +103,25 @@ class My implements ImyArray {
         }
         return false;
     }
+
+    public areAll<T>(predicate: (element: T) => boolean): boolean | undefined {
+        if (this.isNotArray) {
+            return false;
+        }
+        if (this.isEmpty) {
+            return false;
+        }
+        for (const element of this.input) {
+            try {
+                if (predicate(element) === false) {
+                    return false;
+                }
+            } catch (error) {
+                return undefined;
+            }
+        }
+        return true;
+    }
 }
 
 /**

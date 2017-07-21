@@ -118,6 +118,9 @@ class My implements Imy {
     public hasAtLeastOne<T>(predicate: (element: T) => boolean): boolean | undefined {
         return my_array(this.input).hasAtLeastOne(predicate);
     }
+    public areAll<T>(predicate: (element: T) => boolean): boolean | undefined {
+        return my_array(this.input).areAll(predicate);
+    }
     public tryTo<T, U>(action: (element: T) => U): IActionResult<U> {
         try {
             const actionResult = action(this.input);

@@ -76,6 +76,14 @@ export interface ImyCommon {
      * @returns {IActionResult<U>} - returns an IActionResult object that wraps the result returned by the action.
      */
     tryTo<T, U>(action: (element: T) => U): IActionResult<U>;
+
+    /**
+     * Check if all items of the input array satisfies the predicate.
+     * @param {function} predicate - Predicate used to check each item in the input array
+     * @returns {boolean | undefined} - returns true when the predicate returns true for all items.
+     *                                  returns undefined if the predicate throws an error
+     */
+    areAll<T>(predicate: (element: T) => boolean): boolean | undefined;
 }
 
 export interface IValidatable {
