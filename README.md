@@ -11,6 +11,7 @@ fluent API for TypeScript
 [![Known Vulnerabilities](https://snyk.io/test/github/hdorgeval/my-ts/badge.svg)](https://snyk.io/test/github/hdorgeval/my-ts)
 [![Code Climate](https://codeclimate.com/github/hdorgeval/my-ts/badges/gpa.svg)](https://codeclimate.com/github/hdorgeval/my-ts)
 [![Issue Count](https://codeclimate.com/github/hdorgeval/my-ts/badges/issue_count.svg)](https://codeclimate.com/github/hdorgeval/my-ts)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 
 
