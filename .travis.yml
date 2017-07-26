@@ -5,7 +5,7 @@ addons:
   sonarcloud:
     organization: "hdorgeval-github"
     token:
-      secure: "Lcxf3fbujvv9IqMt/mcTVxP/tZZ0xN7OYZN7hMI+jLcCkodAHZEZ/3DYsbgmz3toW/E/FsQkyzckrVtWdX0uBcZz0AENqHrQjGw1YkJGMt+bb12UlgqJpPDLhc/7OfJBPj/5JTOnjRg6ZaayLI3nla9CSz5cNN4aAB7+kWAt93EgVxW5FAgSE7zJtJ0794zkyo4fMiHK14eW3vLhXQm24xJZsREcKCQzpSKLBpwJKj1nJGAAOhBgTtsL6CO6ges7c2GEdIYLDwf4W0IbRjBVk6EiQTV8D5G5kndY1jAwDqGvbcM1EpKEJZpnsIM7Tg+MGusQQxPda2wuyJH/yNQJMIymJ99N3T/c4behTnRAa+f3plBpz0Ix42l/EvBfHq8CJCYdQO+vyvGApb+Z7o8ZtiReTMiy6mo4eNLNfqiDxj2vbSv3FJPnEclGmHIUnPgV0KZOEq5QwxfKHt3U0sxF8fRnywdcl90cxu3budkM8zG+zAF/cuwnOdhj9Wa2i2vLediENBC2kgrLHLJUD5mK2rBVFlhazrFaCxH5gzqieXtTMQ52iFYQGyMsZGf7YBXb4XSZXx/gF6sxP04+A7arBqV7yNz7HVUy7ujiwMkgivYHDsEEOXulHqVp5tPBX/UwidxSnD2lTp3uSTYiyzMKUmgHFnODLj/cYFJFaRaMpuM="
+      secure: "Z/JtUMrwiedVY7186Du9+ffsNpzd4XpX8gxqZIJgNcGz8oRhXWARS6/NV9po9MYd2exsNIABuBYaKcFP6KnTCATLXimgjKe2d0t+xsizACyLAI2YwA67ybMlRrC5hZ2+N2GgeXZVYwicm29NHjRJNPXDW6+dVIYCHU0kkRwvNYdylgbu5RzcbTf+5IRgmBSO2AP/ttbpFEbY82ywg8IesiF0qvctQWWNH+1GHqkpt+/m2y9f+m5Ww9nRnQBHewHmpVL03CdjHYds2ExwaMtK8IePRu4z6npoweoBQ3996ZSx+Wx2wM8Y1zBrLX+4tb9SusvdjhWDuG+vWxz1X4aGDxL0WYEld1QKU4CEovZrMWklPpXYoUpAhjEy4zno2kvxZet6lHY3iKe5TnfHxRfVfCWn6F1WLUi+Uz2oI9CT3GzW+52UTOHY00GQ6Hl6ZkVNAWSjeTR31MshkyDhTgvpNqF1vJYAgQYv7koWBYjj4HPkEKFi6Kmqo4w7hFbO66SVzmPn6xJT4DPvB5d4DoXSoppSRs/LAeYSd/l2KRmq8OizWYrUhlyrFLdYIUMKz/HyIKlMwEaEiYodoqguhIrzhML0/KN5GGZvm63h7O5jhbRjmbyT/WCh35fXJdPO5prGIPLL6uVMbzgdNJYvBMOJAwHuvZGhIPd8aKovT+trp8M="
     branches:
       - master
 jdk:
@@ -32,7 +32,7 @@ script:
 after_success:
   - codecov
   - npm run semantic-release
-  - sonar-scanner
+  - sonar-scanner -X
 
 branches:
   except:
