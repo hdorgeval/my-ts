@@ -15,7 +15,6 @@ fluent API for TypeScript
 
 
 
-
 [![npm badge](https://nodei.co/npm/my-ts.png)](https://npmjs.org/package/my-ts)
 
 ## Prerequisites
