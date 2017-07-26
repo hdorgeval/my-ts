@@ -32,7 +32,7 @@ script:
 after_success:
   - codecov
   - npm run semantic-release
-  - sonar-scanner -X
+  - sonar-scanner -X -Dsonar.login=2876a76e8e830dc95d4ff7c5ae022f8a341c12ed
 
 branches:
   except:
