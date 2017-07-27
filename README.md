@@ -12,6 +12,7 @@ fluent API for TypeScript
 [![Code Climate](https://codeclimate.com/github/hdorgeval/my-ts/badges/gpa.svg)](https://codeclimate.com/github/hdorgeval/my-ts)
 [![Issue Count](https://codeclimate.com/github/hdorgeval/my-ts/badges/issue_count.svg)](https://codeclimate.com/github/hdorgeval/my-ts)
 [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=hdorgeval:my-ts)](https://sonarcloud.io/dashboard/index/hdorgeval:my-ts)
 
 
 
