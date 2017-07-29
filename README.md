@@ -1,5 +1,5 @@
 # my-ts
-fluent API for TypeScript
+fluent syntax for writing TypeScript Apps
 
 ![travis build](https://img.shields.io/travis/hdorgeval/my-ts.svg)
 ![npm](https://img.shields.io/npm/v/my-ts.svg)
@@ -18,15 +18,9 @@ fluent API for TypeScript
 
 [![npm badge](https://nodei.co/npm/my-ts.png)](https://npmjs.org/package/my-ts)
 
-## Prerequisites
-
-This library have dependencies that require Node 7.0.8 or higher, together with NPM 4.2.0 or higher.
-
 ## Installation
-
-**BEFORE YOU INSTALL:** please read the [prerequisites](#prerequisites)
 ```bash
-npm install my-ts --save-dev
+npm install my-ts --save
 ```
 
 ## Examples
