@@ -60,6 +60,9 @@ const closed = (element: any): boolean => { ... }
 if (my(elements).areAll(closed)) {
     //code omitted for brevity
 }
+
+const textFileContent: string = ...
+const lines = my(textFileContent).splitToLines();
 ```
 
 ## API
@@ -156,5 +159,11 @@ if (my(elements).areAll(closed)) {
      *                                  returns undefined if the predicate throws an error
      */
     areAll<T>(predicate: (element: T) => boolean): boolean | undefined;
+
+    /**
+     * Extract all lines from the input string.
+     * @returns {string[]} - by default every line in the result is trimmed and empty lines are removed}
+     */
+    splitToLines(): string[];
 
 ```

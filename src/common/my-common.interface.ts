@@ -86,6 +86,14 @@ export interface ImyCommon {
   areAll<T>(predicate: (element: T) => boolean): boolean | undefined;
 }
 
+export interface ISplittable {
+  /**
+   * Extract all lines from the input string.
+   * @returns {string[] - by default every line in the result is trimmed and empty lines are removed}
+   */
+  splitToLines(): string[];
+}
+
 export interface IValidatable {
   /**
    * Validate input object with specified validator.

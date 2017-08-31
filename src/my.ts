@@ -135,6 +135,27 @@ class My implements Imy {
       };
     }
   }
+  public splitToLines(): string[] {
+    if (typeof this.input !== "string") {
+      return [];
+    }
+
+    if (this.input.length === 0) {
+      return [];
+    }
+
+    const newlinePattern = /(\r\n|\r|\n)/g;
+    const allLines = this.input.split(newlinePattern);
+    const filteredLines = allLines
+      .filter(line => {
+        if (line.trim().length === 0) {
+          return false;
+        }
+        return true;
+      })
+      .map(line => line.trim());
+    return filteredLines;
+  }
 }
 
 /**
