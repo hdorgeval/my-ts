@@ -89,7 +89,7 @@ export interface ImyCommon {
 export interface ISplittable {
   /**
    * Extract all lines from the input string.
-   * @returns {string[] - by default every line in the result is trimmed and empty lines are removed}
+   * @returns {string[]} - by default every line in the result is trimmed and empty lines are removed}
    */
   splitToLines(): string[];
 }
